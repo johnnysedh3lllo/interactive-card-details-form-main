@@ -1,0 +1,135 @@
+body {
+  font-family: $ff-primary;
+}
+
+input {
+  width: 100%;
+}
+
+.logo {
+  width: 3.5rem;
+}
+
+.header {
+  position: relative;
+  padding: 1rem;
+}
+
+// .bg-img {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+// }
+
+.container {
+  padding: 1.5rem;
+}
+
+.card {
+  z-index: 1;
+  position: relative;
+  inline-size: fit-content;
+  color: white;
+  width: 17.8rem;
+
+  &--front {
+    // position: absolute;
+    z-index: 2;
+    // inset-inline-end: 0;
+  }
+
+  &--front &-content-wrapper {
+    position: absolute;
+    z-index: 1;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // width: 100%;
+    block-size: 100%;
+    padding: 1.5rem;
+  }
+
+  &__section {
+  }
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &--back {
+    // position: absolute;
+
+    inset-inline-end: 0;
+    inset-block-start: 0;
+  }
+
+  &--back &__code {
+    position: absolute;
+    inset-block-start: 45%;
+    inset-inline-end: 13%;
+  }
+}
+
+.form {
+  display: grid;
+  gap: 1.5rem;
+  &__field {
+    display: grid;
+    gap: 0.25rem;
+    &-wrapper {
+      display: flex;
+      gap: 0.7rem;
+      & .form__field {
+        flex: 1;
+      }
+    }
+    &__input {
+      border-radius: 8px;
+      border: 1px solid $clr-violet-grayish-light;
+      padding: 0.5rem 1rem;
+      &-wrapper {
+        display: flex;
+        gap: 0.5rem;
+      }
+    }
+
+    &__label {
+      font-weight: $fw-primary;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+  }
+}
+
+.btn {
+  border-radius: 8px;
+  background-color: $clr-violet-very-dark;
+  border: 0;
+  padding: 0.75rem;
+  color: $clr-white;
+  font-size: $fs-primary;
+  cursor: pointer;
+}
+
+.message {
+  display: grid;
+  gap: 3rem;
+  &__section {
+    display: grid;
+    justify-items: center;
+    gap: 2rem;
+    &__context {
+      text-align: center;
+      gap: 1rem;
+      &__heading {
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+      }
+    }
+  }
+}

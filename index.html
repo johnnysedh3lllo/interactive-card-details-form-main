@@ -1,51 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+
   <title>Frontend Mentor | Interactive card details form</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <!-- GOOGLE FONTS API -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+  <!-- CSS STYLESHEET -->
+  <link rel="stylesheet" href="src/styles/style.css">
 </head>
+
 <body>
 
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
+  <header class="header">
 
-  000
 
-  Cardholder Name
-  e.g. Jane Appleseed
+    <article class="card card--front">
 
-  Card Number
-  e.g. 1234 5678 9123 0000
+      <img src="src/assets/bg-card-front.png" alt="">
 
-  Exp. Date (MM/YY)
-  MM
-  YY
 
-  CVC
-  e.g. 123
+      <div class="card-content-wrapper">
+        <img class="logo logo--card" src="src/assets/card-logo.svg" alt="">
 
-  Confirm
 
+        <section class="card__section">
+          <p class="card__number">0000 0000 0000 0000</p>
+          <div class="card__details">
+            <p class="card__details__user">Jane Appleseed</p>
+            <p class="card__details__expiration">00/00</p>
+          </div>
+        </section>
+      </div>
+
+
+    </article>
+
+    <article class="card card--back">
+      <img src="src/assets/bg-card-back.png" alt="">
+      <p class="card__code">000</p>
+    </article>
+
+    <!-- <img class="bg-img" src="src/assets/bg-main-mobile.png" alt=""> -->
+
+
+  </header>
+
+  <main class="main container">
+    <form class="form">
+      <div class="form__field">
+        <label class="form__field__label" for="card-holder">Cardholder Name</label>
+        <input class="form__field__input" type="text" name="card-holder" id="card-holder"
+          placeholder="e.g. Jane Appleseed">
+      </div>
+
+      <div class="form__field">
+        <label class="form__field__label" for="card-number">Card Number</label>
+        <input class="form__field__input" type="number" maxlength="16" name="card-number" id="card-number"
+          placeholder="e.g. 1234 5678 9123 0000">
+      </div>
+
+      <div class="form__field-wrapper">
+        <div class="form__field">
+          <label class="form__field__label" for="date">Exp. Date (MM/YY)</label>
+          <div class="form__field__input-wrapper">
+            <input class="form__field__input" type="number" name="month" id="date" placeholder="MM">
+            <input class="form__field__input" type="number" name="year" id="date" placeholder="YY">
+          </div>
+        </div>
+
+        <div class="form__field">
+          <label class="form__field__label" for="cvc">CVC</label>
+          <input class="form__field__input" maxlength="13" type="number" name="cvc" id="cvc" placeholder="e.g. 123">
+        </div>
+      </div>
+
+      <button class="btn btn--confirm">Confirm</button>
+
+    </form>
+  </main>
   <!-- Completed state start -->
 
-  Thank you!
-  We've added your card details
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="message message--success container">
+    <div class="message__section">
+      <img class=" message__section__icon" src="src/assets/icon-complete.svg" alt="">
+      <section class="message__section__context">
+        <h2 class="message__section__context__heading">Thank you!</h2>
+        <p class="message__section__context__par">We've added your card details</p>
+      </section>
+    </div>
+    <button class="btn btn--dismiss">Continue</button>
   </div>
+
+  <script type="module" src="src/script.js"></script>
 </body>
+
 </html>

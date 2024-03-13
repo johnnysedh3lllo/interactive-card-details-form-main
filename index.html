@@ -32,7 +32,8 @@
               <p class="card__number">0000 0000 0000 0000</p>
               <div class="card__details">
                 <p class="card__details__user">Jane Appleseed</p>
-                <p class="card__details__expiration">00/00</p>
+                <p class="card__details__expiration"><span class="expiry-month">00</span>/<span
+                    class="expiry-year">00</span></p>
               </div>
             </section>
           </div>
@@ -51,19 +52,21 @@
   </header>
 
   <main class="main">
-    <form class="form">
-      <!-- <div class="form__field">
+    <form class="form" novalidate>
+      <div class="form__field">
         <label class="form__field__label" for="card-holder">Cardholder Name</label>
         <input required class="form__field__input" type="text" name="card-holder" id="card-holder"
           placeholder="e.g. Jane Appleseed">
-      </div> -->
+        <span class="error no-display">Can't be blank</span>
+      </div>
 
-      <!-- <div class="form__field"> -->
-      <label class="form__field__label" for="card-number">Card Number</label>
-      <input required class="form__field__input" type="number" max="16" name="card-number" id="card-number"
-        placeholder="e.g. 1234 5678 9123 0000" pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}">
-      <!-- </div> -->
-      <!-- 
+      <div class="form__field">
+        <label class="form__field__label" for="card-number">Card Number</label>
+        <input required class="form__field__input" type="number" name="card-number" id="card-number"
+          placeholder="e.g. 1234 5678 9123 0000" pattern="[0-9]{4}[0-9]{4}[0-9]{4}[0-9]{4}">
+        <span class="error no-display">Can't be blank</span>
+      </div>
+
       <fieldset class="form__field-wrapper">
         <div class="form__field">
           <label class="form__field__label" for="date">Exp. Date (MM/YY)</label>
@@ -73,15 +76,19 @@
             <input required class="form__field__input" type="number" max="2" name="year" id="expiry-year"
               placeholder="YY">
           </div>
+
+          <span class="error no-display">Can't be blank</span>
         </div>
 
         <div class="form__field">
           <label class="form__field__label" for="cvc">CVC</label>
-          <input required class="form__field__input" max="3" type="number" name="cvc" id="cvc" placeholder="e.g. 123">
+          <input required class="form__field__input" maxlength="3" type="text" name="cvc" id="cvc"
+            placeholder="e.g. 123">
+          <span class="error no-display">Can't be blank</span>
         </div>
       </fieldset>
 
-      <button class="btn btn--confirm">Confirm</button> -->
+      <button class="btn btn--confirm">Confirm</button>
 
     </form>
     <div class="message message--success no-display">

@@ -25,6 +25,11 @@ fieldset {
 .logo {
   inline-size: 3.25rem;
 }
+.error {
+  color: $clr-red-error;
+  font-size: 0.75rem;
+  font-weight: $fw-primary;
+}
 
 .header {
   padding: 2rem 1rem 1rem;
@@ -144,6 +149,9 @@ fieldset {
         font-size: 1.1rem;
         letter-spacing: 0.5px;
         color: $clr-violet-grayish-light;
+      }
+      &:focus-visible {
+        outline-color: $clr-violet-grayish-dark;
       }
     }
 

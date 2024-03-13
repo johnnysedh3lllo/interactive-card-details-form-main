@@ -22,84 +22,81 @@
 <body>
 
   <header class="header">
-
-
-    <article class="card card--front">
-
-      <img src="src/assets/bg-card-front.png" alt="">
-
-
-      <div class="card-content-wrapper">
-        <img class="logo logo--card" src="src/assets/card-logo.svg" alt="">
-
-
-        <section class="card__section">
-          <p class="card__number">0000 0000 0000 0000</p>
-          <div class="card__details">
-            <p class="card__details__user">Jane Appleseed</p>
-            <p class="card__details__expiration">00/00</p>
+    <div class="container--header">
+      <article class="card card--front">
+        <div class="wrapper">
+          <img src="src/assets/bg-card-front.png" alt="">
+          <div class="card-content-wrapper">
+            <img class="logo logo--card" src="src/assets/card-logo.svg" alt="">
+            <section class="card__section">
+              <p class="card__number">0000 0000 0000 0000</p>
+              <div class="card__details">
+                <p class="card__details__user">Jane Appleseed</p>
+                <p class="card__details__expiration">00/00</p>
+              </div>
+            </section>
           </div>
-        </section>
-      </div>
-
-
-    </article>
-
-    <article class="card card--back">
-      <img src="src/assets/bg-card-back.png" alt="">
-      <p class="card__code">000</p>
-    </article>
-
-    <!-- <img class="bg-img" src="src/assets/bg-main-mobile.png" alt=""> -->
+        </div>
+      </article>
+      <article class="card card--back">
+        <div class="wrapper">
+          <img src="src/assets/bg-card-back.png" alt="">
+          <p class="card__code">000</p>
+        </div>
+      </article>
+      <!-- <img class="bg-img" src="src/assets/bg-main-mobile.png" alt=""> -->
+    </div>
 
 
   </header>
 
-  <main class="main container">
+  <main class="main">
     <form class="form">
-      <div class="form__field">
+      <!-- <div class="form__field">
         <label class="form__field__label" for="card-holder">Cardholder Name</label>
-        <input class="form__field__input" type="text" name="card-holder" id="card-holder"
+        <input required class="form__field__input" type="text" name="card-holder" id="card-holder"
           placeholder="e.g. Jane Appleseed">
-      </div>
+      </div> -->
 
-      <div class="form__field">
-        <label class="form__field__label" for="card-number">Card Number</label>
-        <input class="form__field__input" type="number" maxlength="16" name="card-number" id="card-number"
-          placeholder="e.g. 1234 5678 9123 0000">
-      </div>
-
-      <div class="form__field-wrapper">
+      <!-- <div class="form__field"> -->
+      <label class="form__field__label" for="card-number">Card Number</label>
+      <input required class="form__field__input" type="number" max="16" name="card-number" id="card-number"
+        placeholder="e.g. 1234 5678 9123 0000" pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}">
+      <!-- </div> -->
+      <!-- 
+      <fieldset class="form__field-wrapper">
         <div class="form__field">
           <label class="form__field__label" for="date">Exp. Date (MM/YY)</label>
           <div class="form__field__input-wrapper">
-            <input class="form__field__input" type="number" name="month" id="date" placeholder="MM">
-            <input class="form__field__input" type="number" name="year" id="date" placeholder="YY">
+            <input required class="form__field__input" type="number" max="2" name="month" id="expiry-month"
+              placeholder="MM">
+            <input required class="form__field__input" type="number" max="2" name="year" id="expiry-year"
+              placeholder="YY">
           </div>
         </div>
 
         <div class="form__field">
           <label class="form__field__label" for="cvc">CVC</label>
-          <input class="form__field__input" maxlength="13" type="number" name="cvc" id="cvc" placeholder="e.g. 123">
+          <input required class="form__field__input" max="3" type="number" name="cvc" id="cvc" placeholder="e.g. 123">
         </div>
-      </div>
+      </fieldset>
 
-      <button class="btn btn--confirm">Confirm</button>
+      <button class="btn btn--confirm">Confirm</button> -->
 
     </form>
+    <div class="message message--success no-display">
+      <div class="message__section">
+        <img class=" message__section__icon" src="src/assets/icon-complete.svg" alt="">
+        <section class="message__section__context">
+          <h2 class="message__section__context__heading">Thank you!</h2>
+          <p class="message__section__context__par">We've added your card details</p>
+        </section>
+      </div>
+      <button class="btn btn--dismiss">Continue</button>
+    </div>
   </main>
   <!-- Completed state start -->
 
-  <div class="message message--success container">
-    <div class="message__section">
-      <img class=" message__section__icon" src="src/assets/icon-complete.svg" alt="">
-      <section class="message__section__context">
-        <h2 class="message__section__context__heading">Thank you!</h2>
-        <p class="message__section__context__par">We've added your card details</p>
-      </section>
-    </div>
-    <button class="btn btn--dismiss">Continue</button>
-  </div>
 
   <script type="module" src="src/script.js"></script>
 </body>

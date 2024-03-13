@@ -23,6 +23,10 @@ const successMsg = document.querySelector(".message--success");
 
 cardHolder.addEventListener("input", (e) => {});
 
+function onlyNumbers(value) {
+  return value.replace(/\D/g, "");
+}
+
 form.addEventListener("input", function (event) {
   const curInput = event.target;
   const curFieldError = curInput.parentElement.querySelector(".error")
@@ -44,7 +48,9 @@ form.addEventListener("input", function (event) {
     cardName.textContent = curInput.value;
   }
   if (curInput.id === "card-number") {
-    cardNumberDisplay.textContent = curInput.value;
+      let value = onlyNumbers(curInput.value); // Remove non-numeric characters
+    value = value.replace(/(.{4})/g, "$1 ").trim();
+    cardNumberDisplay.textContent = value;
   }
 
   if (curInput.id === "expiry-month") {

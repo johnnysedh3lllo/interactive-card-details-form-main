@@ -19,6 +19,7 @@ const confirmBtn = document.querySelector(".btn--confirm");
 const dismissBtn = document.querySelector(".btn--dismiss");
 
 const errorMsgArr = document.querySelectorAll(".error");
+const successMsg = document.querySelector(".message--success");
 
 cardHolder.addEventListener("input", (e) => {});
 
@@ -74,7 +75,18 @@ form.addEventListener("submit", function (e) {
         errMsg.textContent = "Invalid Input";
       }
     });
+  } else {
+    form.classList.add("no-display");
+    successMsg.classList.remove("no-display");
   }
+});
+
+dismissBtn.addEventListener("click", function () {
+  successMsg.classList.add("no-display");
+  form.classList.remove("no-display");
+  formInputArr.forEach((input) => {
+    input.textContent = "";
+  });
 });
 
 // document.body.addEventListener("click", function (event) {
